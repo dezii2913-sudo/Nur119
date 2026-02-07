@@ -1909,6 +1909,421 @@ mL        5 mL        1000 mg       0.5 g
 <!-- SECTION 11: Gravity & Pump -->
 <div class="section">
 <h2>⏱️ IV Flow Rate Calculations</h2>
+
+                    <!-- UNIT 2 ADDITION: Decision Box (Which Formula?) -->
+                    <div class="card">
+                        <div class="unit2-badge">UNIT 2 • QUICK DECISION</div>
+                        <h3>🧭 “Which Formula Do I Use?” (Insulin vs Heparin vs IV Rates)</h3>
+
+                        <div class="alert alert-info">
+                            Use this box on exams to pick the right setup in <strong>10 seconds</strong>.
+                        </div>
+
+                        <div class="game-container">
+                            <h4>1) What is the order asking for?</h4>
+                            <ul>
+                                <li><strong>IV Pump rate</strong> → answer needs <strong>mL/hr</strong></li>
+                                <li><strong>Gravity rate</strong> → answer needs <strong>gtt/min</strong></li>
+                                <li><strong>Insulin/Heparin drip</strong> → often ordered in <strong>units/hr</strong> (then convert to mL/hr)</li>
+                            </ul>
+
+                            <h4>2) If it’s ordered in units/hr… which direction?</h4>
+                            <div class="alert alert-warning">
+                                <strong>Units/hr → mL/hr (program the pump):</strong><br>
+                                <strong>mL/hr = (ordered units/hr) × (total mL in bag) ÷ (total units in bag)</strong>
+                            </div>
+                            <div class="alert alert-success">
+                                <strong>mL/hr → Units/hr (verify what the patient is getting):</strong><br>
+                                <strong>units/hr = (mL/hr × total units in bag) ÷ (total mL in bag)</strong>
+                            </div>
+
+                            <h4>3) If it’s heparin weight-based… what do you do first?</h4>
+                            <div class="alert alert-info">
+                                <strong>Always start with kg:</strong> <strong>kg = lb ÷ 2.2</strong><br>
+                                Then calculate <strong>units/hr = kg × (units/kg/hr)</strong> → then convert to <strong>mL/hr</strong> using the bag.
+                            </div>
+
+                            <h4>4) If minutes are involved…</h4>
+                            <div class="formula-box" style="text-align:left;">
+                                hours = minutes ÷ 60<br>
+                                minutes = hours × 60
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- UNIT 2 ADDITION: Heparin IV Bolus + Drip (Weight-Based Protocol) -->
+                    <div class="card">
+                        <div class="unit2-badge">UNIT 2 • HEPARIN • Weight-Based Protocol</div>
+                        <h3>🩸 Heparin IV Bolus + Continuous Drip (Weight-Based)</h3>
+
+                        <div class="alert alert-warning">
+                            <strong>Instructor focus:</strong> Heparin protocols are <strong>weight-based (kg)</strong> and often include
+                            a <strong>bolus dose</strong> + a <strong>continuous drip (units/hr)</strong> that must be programmed as <strong>mL/hr</strong>.
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>Always start with WEIGHT IN KILOGRAMS.</strong><br>
+                            If weight is given in pounds (lb), convert first.
+                        </div>
+
+                        <h4>🔁 Weight Conversions (MUST KNOW)</h4>
+                        <div class="formula-box" style="text-align:left;">
+                            kg = lb ÷ 2.2
+                        </div>
+
+                        <h4>🧮 Typical Heparin Protocol (Example)</h4>
+                        <ul>
+                            <li><strong>Bolus:</strong> 80 units/kg IV</li>
+                            <li><strong>Drip:</strong> 18 units/kg/hr continuous infusion</li>
+                        </ul>
+
+                        <div class="alert alert-warning">
+                            ⚠️ Protocol numbers vary — <strong>ALWAYS use what the question provides</strong>.  
+                            These values are used here for math practice.
+                        </div>
+
+                        <hr>
+
+                        <h4>✅ STEP 1: Convert Weight to kg (if needed)</h4>
+                        <p><strong>Example weight:</strong> 176 lb</p>
+                        <div class="formula-box" style="text-align:left;">
+                            176 ÷ 2.2 = <strong>80 kg</strong>
+                        </div>
+
+                        <hr>
+
+                        <h4>💉 STEP 2: Calculate Heparin IV Bolus (units)</h4>
+                        <p><strong>Order:</strong> 80 units/kg IV bolus</p>
+                        <div class="formula-box" style="text-align:left;">
+                            80 kg × 80 units/kg = <strong>6,400 units</strong>
+                        </div>
+
+                        <div class="alert alert-info">
+                            If the bolus is supplied in mL, use:<br>
+                            <strong>mL = units ordered ÷ units per mL (from vial)</strong>
+                        </div>
+
+                        <hr>
+
+                        <h4>💧 STEP 3: Calculate Continuous Heparin Drip (units/hr)</h4>
+                        <p><strong>Order:</strong> 18 units/kg/hr</p>
+                        <div class="formula-box" style="text-align:left;">
+                            80 kg × 18 units/kg/hr = <strong>1,440 units/hr</strong>
+                        </div>
+
+                        <hr>
+
+                        <h4>🧮 STEP 4: Convert Units/hr → mL/hr (Pump Programming)</h4>
+                        <p><strong>Heparin bag:</strong> 25,000 units in 250 mL</p>
+                        <div class="formula-box" style="text-align:left;">
+                            mL/hr = units/hr × total mL ÷ total units<br>
+                            mL/hr = 1,440 × 250 ÷ 25,000 = <strong>14.4 mL/hr</strong>
+                        </div>
+
+                        <hr>
+
+                        <h4>⏱️ Minutes ↔ Hours Conversion (When Needed)</h4>
+                        <div class="formula-box" style="text-align:left;">
+                            hours = minutes ÷ 60<br>
+                            minutes = hours × 60
+                        </div>
+
+                        <div class="alert alert-info">
+                            Example: If a question gives 30 min → 30 ÷ 60 = <strong>0.5 hr</strong>
+                        </div>
+
+                        <hr>
+
+                        <div class="unit2-quiz" id="unit2_heparin_quiz">
+                            <div class="unit2-q" data-answer="A">
+                                <div class="prompt">
+                                    Q1) A patient weighs 198 lb. The protocol orders heparin at 18 units/kg/hr.
+                                    How many units/hr should be infused?
+                                </div>
+                                <div class="unit2-options">
+                                    <button data-choice="A">1,620 units/hr</button>
+                                    <button data-choice="B">1,980 units/hr</button>
+                                    <button data-choice="C">1,800 units/hr</button>
+                                    <button data-choice="D">900 units/hr</button>
+                                </div>
+                                <div class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+
+                            <div class="unit2-q" data-answer="B">
+                                <div class="prompt">
+                                    Q2) Using a bag of 25,000 units in 250 mL, what is the pump rate (mL/hr)
+                                    for a heparin drip of 1,440 units/hr?
+                                </div>
+                                <div class="unit2-options">
+                                    <button data-choice="A">12 mL/hr</button>
+                                    <button data-choice="B">14.4 mL/hr</button>
+                                    <button data-choice="C">18 mL/hr</button>
+                                    <button data-choice="D">5.8 mL/hr</button>
+                                </div>
+                                <div class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+
+                            <button class="btn btn-secondary" onclick="unit2_resetQuiz('unit2_heparin_quiz')">Reset Heparin Quiz</button>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>🧩 Type & Check: Full Heparin Setup</h4>
+                            <p>
+                                Weight: <strong>220 lb</strong><br>
+                                Drip: <strong>18 units/kg/hr</strong><br>
+                                Bag: <strong>25,000 units in 250 mL</strong><br><br>
+                                What is the pump rate (<strong>mL/hr</strong>)?
+                            </p>
+                            <div class="unit2-mini">
+                                <div class="unit2-inputrow">
+                                    <input id="unit2_heparin_full" type="text" inputmode="decimal" placeholder="Answer in mL/hr…">
+                                    <button class="btn btn-primary" onclick="unit2_checkNumeric('unit2_heparin_full','18')">Check</button>
+                                </div>
+                                <div id="unit2_heparin_full_fb" class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+                            <div class="alert alert-success" style="margin-top:10px;">
+                                Math check: 220 ÷ 2.2 = 100 kg → 100 × 18 = 1,800 units/hr →
+                                1,800 × 250 ÷ 25,000 = <strong>18 mL/hr</strong>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>UNIT 2 EXAM TRAPS:</strong>
+                            <ul>
+                                <li>Forgetting to convert lb → kg</li>
+                                <li>Using bolus units instead of drip units</li>
+                                <li>Programming units/hr into the pump (pump needs mL/hr)</li>
+                                <li>Skipping minutes → hours conversion</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- UNIT 2 ADDITION: IV Insulin Pump Programming (Teacher Formula + Interactive) -->
+                    <div class="card">
+                        <div class="unit2-badge">UNIT 2 • IV INSULIN • Pump Programming</div>
+                        <h3>🩸 IV Insulin Through an IV Pump (Units/hr → mL/hr)</h3>
+
+                        <div class="alert alert-warning">
+                            <strong>Instructor must-know:</strong> The IV pump is programmed in <strong>mL/hr</strong> — but insulin drips are ordered in <strong>units/hr</strong>.
+                        </div>
+
+                        <div class="alert alert-info">
+                            <strong>Teacher Formula (1-step conversion):</strong><br>
+                            <strong>mL/hr = (ordered units/hr) × (total mL in bag) ÷ (total units in bag)</strong>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>Worked Example A (1:1 bag)</h4>
+                            <p><strong>Order:</strong> 6 units/hr<br>
+                               <strong>Bag:</strong> 100 units in 100 mL</p>
+                            <div class="formula-box" style="text-align:left;">
+                                mL/hr = 6 × 100 ÷ 100 = <strong>6 mL/hr</strong>
+                            </div>
+                        </div>
+
+                        
+
+                    <!-- UNIT 2 ADDITION: Reverse Insulin Calculation (mL/hr → Units/hr) -->
+                    <div class="card">
+                        <div class="unit2-badge">UNIT 2 • IV INSULIN • Reverse Calculation</div>
+                        <h3>🔁 Calculate Units/hour from mL/hour (Verifying the Drip)</h3>
+
+                        <div class="alert alert-info">
+                            This is used when the <strong>pump is already running in mL/hr</strong> and you must verify
+                            how many <strong>units/hr</strong> the patient is receiving.
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>Teacher Equation (reverse):</strong><br>
+                            <strong>units/hr = (mL/hr × total units in bag) ÷ total mL in bag</strong>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>Worked Example A</h4>
+                            <p><strong>Pump setting:</strong> 6 mL/hr<br>
+                               <strong>Bag:</strong> 100 units in 100 mL</p>
+                            <div class="formula-box" style="text-align:left;">
+                                units/hr = 6 × 100 ÷ 100 = <strong>6 units/hr</strong>
+                            </div>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>Worked Example B (non-1:1 bag)</h4>
+                            <p><strong>Pump setting:</strong> 20 mL/hr<br>
+                               <strong>Bag:</strong> 50 units in 250 mL</p>
+                            <div class="formula-box" style="text-align:left;">
+                                units/hr = 20 × 50 ÷ 250 = <strong>4 units/hr</strong>
+                            </div>
+                        </div>
+
+                        <div class="unit2-quiz" id="unit2_reverse_insulin_quiz">
+                            <div class="unit2-q" data-answer="C">
+                                <div class="prompt">
+                                    Q) The IV pump is set at <strong>15 mL/hr</strong>. The bag contains
+                                    <strong>75 units in 250 mL</strong>. How many units/hr is the patient receiving?
+                                </div>
+                                <div class="unit2-options">
+                                    <button data-choice="A">3 units/hr</button>
+                                    <button data-choice="B">4 units/hr</button>
+                                    <button data-choice="C">4.5 units/hr</button>
+                                    <button data-choice="D">6 units/hr</button>
+                                </div>
+                                <div class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+
+                            <button class="btn btn-secondary" onclick="unit2_resetQuiz('unit2_reverse_insulin_quiz')">Reset Reverse Quiz</button>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>UNIT 2 Safety Check:</strong> Nurses often do this math to verify insulin drips
+                            during handoff, titration, or rapid glucose changes.
+                        </div>
+                    </div>
+<div class="game-container">
+                            <h4>Worked Example B (non‑1:1 bag — exam favorite)</h4>
+                            <p><strong>Order:</strong> 4 units/hr<br>
+                               <strong>Bag:</strong> 50 units in 250 mL</p>
+                            <div class="formula-box" style="text-align:left;">
+                                mL/hr = 4 × 250 ÷ 50 = <strong>20 mL/hr</strong>
+                            </div>
+                        </div>
+
+                        <div class="unit2-quiz" id="unit2_insulin_quiz">
+                            <div class="unit2-q" data-answer="B">
+                                <div class="prompt">Q1) Order: 8 units/hr. Bag: 100 units in 250 mL. What is the pump rate?</div>
+                                <div class="unit2-options">
+                                    <button data-choice="A">12.5 mL/hr</button>
+                                    <button data-choice="B">20 mL/hr</button>
+                                    <button data-choice="C">25 mL/hr</button>
+                                    <button data-choice="D">32 mL/hr</button>
+                                </div>
+                                <div class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+
+                            <div class="unit2-q" data-answer="A">
+                                <div class="prompt">Q2) Bag: 100 units in 100 mL. If the pump is set to 6 mL/hr, how many units/hr is the patient receiving?</div>
+                                <div class="unit2-options">
+                                    <button data-choice="A">6 units/hr</button>
+                                    <button data-choice="B">3 units/hr</button>
+                                    <button data-choice="C">12 units/hr</button>
+                                    <button data-choice="D">60 units/hr</button>
+                                </div>
+                                <div class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+
+                            <button class="btn btn-secondary" onclick="unit2_resetQuiz('unit2_insulin_quiz')">Reset Insulin Quiz</button>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>🧩 “Find the Bag Concentration” (Units per mL)</h4>
+                            <p><strong>Bag:</strong> 50 units in 250 mL. What is the concentration (<strong>units/mL</strong>)?</p>
+                            <div class="unit2-mini">
+                                <div class="unit2-inputrow">
+                                    <input id="unit2_insulin_conc" type="text" inputmode="decimal" placeholder="Answer in units/mL…">
+                                    <button class="btn btn-primary" onclick="unit2_checkNumeric('unit2_insulin_conc','0.2')">Check</button>
+                                </div>
+                                <div id="unit2_insulin_conc_fb" class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+                            <div class="alert alert-info" style="margin-top:10px;">
+                                Hint: units/mL = total units ÷ total mL
+                            </div>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>⏳ Timed Insulin-Drip Challenge (Randomized)</h4>
+                            <div class="alert alert-success">
+                                You’ll get randomized insulin drip problems. Use the teacher formula fast and accurate.
+                                <br><strong>Goal:</strong> Highest score before time runs out.
+                            </div>
+
+                            <div class="unit2-score">
+                                <span>Time Left</span>
+                                <span id="unit2_insulin_time">02:00</span>
+                            </div>
+                            <div class="unit2-score" style="margin-top:10px;">
+                                <span>Score</span>
+                                <span id="unit2_insulin_score">0</span>
+                            </div>
+                            <div class="unit2-score" style="margin-top:10px;">
+                                <span>Best</span>
+                                <span id="unit2_insulin_best">0</span>
+                            </div>
+
+                            <div class="unit2-q" style="margin-top:14px;">
+                                <div class="prompt" id="unit2_insulin_prompt">Press Start to begin.</div>
+                                <div class="unit2-inputrow">
+                                    <input id="unit2_insulin_answer" type="text" inputmode="decimal" placeholder="Enter pump rate (mL/hr)…">
+                                    <button class="btn btn-primary" onclick="unit2_insulin_submit()">Submit</button>
+                                </div>
+                                <div id="unit2_insulin_timer_fb" class="unit2-feedback" aria-live="polite"></div>
+                                <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+                                    <button class="btn btn-primary" onclick="unit2_insulin_start()">Start</button>
+                                    <button class="btn btn-secondary" onclick="unit2_insulin_reset()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>UNIT 2 Exam Trap:</strong> Never assume insulin drips are 1 unit/mL — always use the bag label.
+                        </div>
+                    </div>
+
+
+                    <!-- UNIT 2 ADDITION: Convert Units/hr to mL/hr (Pump Programming) -->
+                    <div class="card">
+                        <div class="unit2-badge">UNIT 2 • IV Pump • Units/hr → mL/hr</div>
+                        <h3>🧮 Convert Units/hour to mL/hour (When the Pump Needs mL/hr)</h3>
+
+                        <div class="alert alert-info">
+                            <strong>Big rule:</strong> You can only convert <strong>units/hr → mL/hr</strong> if you know the medication concentration in <strong>units/mL</strong> (from the bag label/order set).
+                        </div>
+
+                        <h4>✅ Simple Math Way (Recommended)</h4>
+                        <div class="formula-box" style="text-align:left;">
+                            <strong>mL/hr = (Units/hr ordered) ÷ (Units per mL)</strong>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>Example 1 (Heparin-style)</h4>
+                            <p><strong>Order:</strong> 900 units/hr<br>
+                               <strong>Bag:</strong> 25,000 units in 250 mL</p>
+
+                            <div class="alert alert-success">
+                                Step 1) Find units per mL: 25,000 ÷ 250 = <strong>100 units/mL</strong><br>
+                                Step 2) Convert: mL/hr = 900 ÷ 100 = <strong>9 mL/hr</strong>
+                            </div>
+                        </div>
+
+                        <div class="game-container">
+                            <h4>Interactive Check (Type & Verify)</h4>
+                            <p><strong>Order:</strong> 1,200 units/hr<br>
+                               <strong>Concentration:</strong> 200 units/mL<br>
+                               What is the pump rate (<strong>mL/hr</strong>)?</p>
+                            <div class="unit2-mini">
+                                <div class="unit2-inputrow">
+                                    <input id="unit2_units_to_mlh_p1" type="text" inputmode="decimal" placeholder="Answer in mL/hr…">
+                                    <button class="btn btn-primary" onclick="unit2_checkNumeric('unit2_units_to_mlh_p1','6')">Check</button>
+                                </div>
+                                <div id="unit2_units_to_mlh_p1_fb" class="unit2-feedback" aria-live="polite"></div>
+                            </div>
+                            <div class="alert alert-warning" style="margin-top:10px;">
+                                Quick math: 1,200 ÷ 200 = 6 mL/hr.
+                            </div>
+                        </div>
+
+                        <h4>🧠 Dimensional Analysis Way (Also Correct)</h4>
+                        <div class="formula-box" style="text-align:left;">
+                            <strong>Goal:</strong> Cancel units → end with mL/hr<br><br>
+                            <strong>900 units/hr</strong> × <strong>(1 mL / 100 units)</strong> = <strong>9 mL/hr</strong>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <strong>UNIT 2 Exam Trap:</strong> If you don’t have <strong>units/mL</strong>, you must calculate concentration first (from the bag label).
+                        </div>
+                    </div>
+
 <div class="card">
 <h3>Two Types of IV Administration</h3>
 <table>
@@ -2481,6 +2896,13 @@ mL        5 mL        1000 mg       0.5 g
 <div class="formula-box" style="font-size: 0.9rem; text-align: left;">
 <strong>Gravity IV:</strong> gtt/min = (Volume × Drop Factor) ÷ Time(min)<br/>
 <strong>IV Pump:</strong> mL/hr = Volume(mL) ÷ Time(hr)<br/>
+
+<strong>Insulin/Heparin (Units→mL Pump):</strong> mL/hr = (units/hr × total mL in bag) ÷ total units in bag<br/>
+<strong>Reverse (Verify drip):</strong> units/hr = (mL/hr × total units in bag) ÷ total mL in bag<br/>
+<strong>Weight:</strong> kg = lb ÷ 2.2<br/>
+<strong>Weight-based drip:</strong> units/hr = kg × (units/kg/hr)<br/>
+<strong>Weight-based bolus:</strong> total units = kg × (units/kg)<br/>
+<strong>Time:</strong> hours = minutes ÷ 60 (and minutes = hours × 60)<br/>
 <strong>Temp F→C:</strong> (F - 32) ÷ 1.8<br/>
 <strong>Temp C→F:</strong> (C × 1.8) + 32<br/>
 <strong>Pediatric 0-10kg:</strong> 100 mL/kg/24hr<br/>
@@ -2958,5 +3380,272 @@ mL        5 mL        1000 mg       0.5 g
   document.addEventListener('DOMContentLoaded', setTimer);
 })();
 </script>
+
+<script>
+/* ===== UNIT 2: Timed Insulin Drip Challenge (Teacher Formula) ===== */
+(function(){
+  const LS_KEY = 'unit2_insulin_best_v1';
+  let timer = null;
+  let secondsLeft = 120;
+  let score = 0;
+  let current = null; // {uhr, totalML, totalU, answerMLH}
+
+  function fmt(s){
+    const m = String(Math.floor(s/60)).padStart(2,'0');
+    const r = String(s%60).padStart(2,'0');
+    return m + ':' + r;
+  }
+
+  function setText(id, txt){
+    const el = document.getElementById(id);
+    if(el) el.textContent = txt;
+  }
+
+  function bestGet(){
+    const v = Number(localStorage.getItem(LS_KEY) || '0');
+    return isFinite(v) ? v : 0;
+  }
+  function bestSet(v){
+    localStorage.setItem(LS_KEY, String(v));
+  }
+
+  function nextProblem(){
+    // Choose common bag patterns used in class (keeps it realistic)
+    const bags = [
+      {totalU: 100, totalML: 100},
+      {totalU: 100, totalML: 250},
+      {totalU: 50, totalML: 250},
+      {totalU: 250, totalML: 250},
+      {totalU: 125, totalML: 250}
+    ];
+    const bag = bags[Math.floor(Math.random()*bags.length)];
+    const uhrOptions = [1,2,3,4,5,6,7,8,9,10,12,15];
+    const uhr = uhrOptions[Math.floor(Math.random()*uhrOptions.length)];
+
+    // Teacher formula: mL/hr = uhr * totalML / totalU
+    const raw = (uhr * bag.totalML) / bag.totalU;
+    // Round to 0.1 mL/hr for pump programming practice
+    const ans = Math.round(raw * 10) / 10;
+
+    current = {uhr, totalML: bag.totalML, totalU: bag.totalU, ans};
+    setText('unit2_insulin_prompt',
+      `Order: ${uhr} units/hr • Bag: ${bag.totalU} units in ${bag.totalML} mL • What is the pump rate (mL/hr)? (Round to 0.1)`
+    );
+
+    const input = document.getElementById('unit2_insulin_answer');
+    if(input){ input.value=''; input.focus(); }
+  }
+
+  function feedback(ok, msg){
+    const fb = document.getElementById('unit2_insulin_timer_fb');
+    if(!fb) return;
+    fb.className = ok ? 'unit2-feedback correct' : 'unit2-feedback incorrect';
+    fb.textContent = msg;
+  }
+
+  function tick(){
+    secondsLeft--;
+    setText('unit2_insulin_time', fmt(secondsLeft));
+    if(secondsLeft <= 0){
+      stop();
+      feedback(true, `⏰ Time! Final score: ${score}`);
+      const best = bestGet();
+      if(score > best){ bestSet(score); }
+      setText('unit2_insulin_best', String(bestGet()));
+    }
+  }
+
+  function stop(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+
+  window.unit2_insulin_start = function(){
+    // reset if already running
+    stop();
+    secondsLeft = 120;
+    score = 0;
+    setText('unit2_insulin_time', fmt(secondsLeft));
+    setText('unit2_insulin_score', String(score));
+    setText('unit2_insulin_best', String(bestGet()));
+    feedback(true, '✅ Started!');
+    nextProblem();
+    timer = setInterval(tick, 1000);
+  };
+
+  window.unit2_insulin_submit = function(){
+    if(!timer || !current){
+      feedback(false, 'Press Start first.');
+      return;
+    }
+    const input = document.getElementById('unit2_insulin_answer');
+    const val = (input && input.value) ? input.value.trim() : '';
+    const norm = val.replace(/[^0-9.]/g,'');
+    if(norm === ''){ feedback(false, 'Enter a number.'); return; }
+    const num = Number(norm);
+    // accept within 0.1
+    const ok = Math.abs(num - current.ans) <= 0.1;
+    if(ok){
+      score++;
+      setText('unit2_insulin_score', String(score));
+      feedback(true, `✅ Correct! Answer: ${current.ans} mL/hr`);
+      nextProblem();
+    } else {
+      feedback(false, `❌ Not quite. Correct: ${current.ans} mL/hr`);
+      nextProblem();
+    }
+  };
+
+  window.unit2_insulin_reset = function(){
+    stop();
+    secondsLeft = 120;
+    score = 0;
+    setText('unit2_insulin_time', '02:00');
+    setText('unit2_insulin_score', '0');
+    setText('unit2_insulin_best', String(bestGet()));
+    setText('unit2_insulin_prompt', 'Press Start to begin.');
+    const input = document.getElementById('unit2_insulin_answer');
+    if(input) input.value='';
+    const fb = document.getElementById('unit2_insulin_timer_fb');
+    if(fb){ fb.className='unit2-feedback'; fb.textContent=''; fb.style.display='none'; }
+  };
+
+  // initialize best on load if section exists
+  document.addEventListener('DOMContentLoaded', function(){
+    if(document.getElementById('unit2_insulin_best')){
+      setText('unit2_insulin_best', String(bestGet()));
+    }
+  });
+})();
+</script>
+
+
+<script>
+/* ===== UNIT 2: Timed Heparin Challenge (Weight-based protocol practice) ===== */
+(function(){
+  const LS_KEY = 'unit2_heparin_best_v1';
+  let timer = null;
+  let secondsLeft = 120;
+  let score = 0;
+  let current = null; // {lb, kg, uPerKgHr, unitsHr, mLHr}
+
+  const BAG_UNITS = 25000;
+  const BAG_ML = 250;
+  const DEFAULT_UPKGH = 18; // practice only
+
+  function fmt(s){
+    const m = String(Math.floor(s/60)).padStart(2,'0');
+    const r = String(s%60).padStart(2,'0');
+    return m + ':' + r;
+  }
+  function setText(id, txt){
+    const el = document.getElementById(id);
+    if(el) el.textContent = txt;
+  }
+  function bestGet(){
+    const v = Number(localStorage.getItem(LS_KEY) || '0');
+    return isFinite(v) ? v : 0;
+  }
+  function bestSet(v){ localStorage.setItem(LS_KEY, String(v)); }
+
+  function nextProblem(){
+    // generate weights that convert cleanly to kg (multiples of 2.2)
+    const kgOptions = [50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100];
+    const kg = kgOptions[Math.floor(Math.random()*kgOptions.length)];
+    const lb = Math.round(kg * 2.2); // integer lb
+    const uPerKgHr = DEFAULT_UPKGH;
+
+    const unitsHr = kg * uPerKgHr; // units/hr
+    const rawMLHr = (unitsHr * BAG_ML) / BAG_UNITS; // mL/hr
+    // round to 0.1 for pump
+    const mLHr = Math.round(rawMLHr * 10) / 10;
+
+    current = {lb, kg, uPerKgHr, unitsHr, mLHr};
+    setText('unit2_heparin_prompt',
+      `Weight: ${lb} lb → (convert to kg) • Order: ${uPerKgHr} units/kg/hr • Bag: ${BAG_UNITS} units in ${BAG_ML} mL • What is the pump rate (mL/hr)? (Round to 0.1)`
+    );
+
+    const input = document.getElementById('unit2_heparin_answer');
+    if(input){ input.value=''; input.focus(); }
+  }
+
+  function feedback(ok, msg){
+    const fb = document.getElementById('unit2_heparin_timer_fb');
+    if(!fb) return;
+    fb.className = ok ? 'unit2-feedback correct' : 'unit2-feedback incorrect';
+    fb.textContent = msg;
+  }
+
+  function tick(){
+    secondsLeft--;
+    setText('unit2_heparin_time', fmt(secondsLeft));
+    if(secondsLeft <= 0){
+      stop();
+      feedback(true, `⏰ Time! Final score: ${score}`);
+      const best = bestGet();
+      if(score > best){ bestSet(score); }
+      setText('unit2_heparin_best', String(bestGet()));
+    }
+  }
+
+  function stop(){
+    if(timer){ clearInterval(timer); timer = null; }
+  }
+
+  window.unit2_heparin_start = function(){
+    stop();
+    secondsLeft = 120;
+    score = 0;
+    setText('unit2_heparin_time', fmt(secondsLeft));
+    setText('unit2_heparin_score', String(score));
+    setText('unit2_heparin_best', String(bestGet()));
+    feedback(true, '✅ Started!');
+    nextProblem();
+    timer = setInterval(tick, 1000);
+  };
+
+  window.unit2_heparin_submit = function(){
+    if(!timer || !current){
+      feedback(false, 'Press Start first.');
+      return;
+    }
+    const input = document.getElementById('unit2_heparin_answer');
+    const val = (input && input.value) ? input.value.trim() : '';
+    const norm = val.replace(/[^0-9.]/g,'');
+    if(norm === ''){ feedback(false, 'Enter a number.'); return; }
+    const num = Number(norm);
+    const ok = Math.abs(num - current.mLHr) <= 0.1;
+    if(ok){
+      score++;
+      setText('unit2_heparin_score', String(score));
+      feedback(true, `✅ Correct! Weight ${current.kg} kg → ${current.unitsHr} units/hr → ${current.mLHr} mL/hr`);
+      nextProblem();
+    } else {
+      feedback(false, `❌ Not quite. Correct: ${current.mLHr} mL/hr (kg=${current.kg}, units/hr=${current.unitsHr})`);
+      nextProblem();
+    }
+  };
+
+  window.unit2_heparin_reset = function(){
+    stop();
+    secondsLeft = 120;
+    score = 0;
+    setText('unit2_heparin_time', '02:00');
+    setText('unit2_heparin_score', '0');
+    setText('unit2_heparin_best', String(bestGet()));
+    setText('unit2_heparin_prompt', 'Press Start to begin.');
+    const input = document.getElementById('unit2_heparin_answer');
+    if(input) input.value='';
+    const fb = document.getElementById('unit2_heparin_timer_fb');
+    if(fb){ fb.className='unit2-feedback'; fb.textContent=''; fb.style.display='none'; }
+  };
+
+  document.addEventListener('DOMContentLoaded', function(){
+    if(document.getElementById('unit2_heparin_best')){
+      setText('unit2_heparin_best', String(bestGet()));
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
