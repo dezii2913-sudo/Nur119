@@ -282,6 +282,87 @@
             .content-area { padding: 20px; }
             .matching-game { grid-template-columns: 1fr; }
         }
+
+        /* ===== QUICK REFERENCE SECTION — DARKENED FOR READABILITY ===== */
+        .section[data-sec="17"] .card {
+            background: #e0e0e0;
+            border-left: 5px solid #b5001f;
+            border: 2px solid #999;
+            border-left: 5px solid #b5001f;
+        }
+
+        .section[data-sec="17"] .card h3 {
+            color: #000;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .section[data-sec="17"] .card h4 {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .section[data-sec="17"] .formula-box {
+            background: #1a1a2e;
+            border: 2px solid #000;
+            color: #fff;
+        }
+
+        .section[data-sec="17"] .formula-box strong {
+            color: #7ecfff;
+        }
+
+        .section[data-sec="17"] table {
+            border: 2px solid #333;
+        }
+
+        .section[data-sec="17"] th {
+            background: #1a1a2e;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .section[data-sec="17"] td {
+            border-bottom: 1px solid #777;
+            color: #000;
+            font-weight: 500;
+        }
+
+        .section[data-sec="17"] tr:nth-child(even) td {
+            background: #cecece;
+        }
+
+        .section[data-sec="17"] tr:hover td {
+            background: #bbb;
+        }
+
+        .section[data-sec="17"] .alert-info {
+            background: #b8dde8;
+            border-color: #0a4a5a;
+            color: #000;
+        }
+
+        .section[data-sec="17"] .alert-warning {
+            background: #f0d060;
+            border-color: #7a5c00;
+            color: #000;
+        }
+
+        .section[data-sec="17"] .alert-danger {
+            background: #f5a0a0;
+            border-color: #8b0000;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .section[data-sec="17"] p,
+        .section[data-sec="17"] li {
+            color: #000;
+        }
+
+        .section[data-sec="17"] strong {
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -3830,22 +3911,24 @@ mL        5 mL        1000 mg       0.5 g
 <title>NUR 119 Quick Reference — All Units</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Segoe UI',Arial,sans-serif; background:white; padding:20px; color:#1a1a2e; font-size:13px; line-height:1.5; }
-  h2 { color:#f5576c; font-size:1.6rem; margin-bottom:14px; text-align:center; }
-  .card { background:#f8f9fa; border-left:4px solid #f5576c; padding:14px 18px; margin:12px 0; border-radius:6px; page-break-inside:avoid; }
-  .card h3 { color:#f5576c; font-size:1rem; margin-bottom:8px; }
-  .formula-box { background:#2c3e50; color:white; padding:12px 16px; border-radius:6px; font-family:'Courier New',monospace; font-size:0.82rem; margin:8px 0; line-height:1.7; }
+  body { font-family:Arial,sans-serif; background:white; padding:20px; color:#000; font-size:12px; line-height:1.5; }
+  h2 { color:#b5001f; font-size:1.5rem; margin-bottom:14px; text-align:center; }
+  h3 { color:#000; font-size:0.95rem; margin-bottom:8px; font-weight:bold; text-decoration:underline; }
+  .card { background:#e8e8e8; border:2px solid #999; border-left:5px solid #b5001f; padding:14px 18px; margin:12px 0; border-radius:6px; page-break-inside:avoid; }
+  .formula-box { background:#1a1a2e; color:white; padding:12px 16px; border-radius:6px; font-family:'Courier New',monospace; font-size:0.82rem; margin:8px 0; line-height:1.7; border:2px solid #000; }
   .formula-box strong { color:#7ecfff; }
-  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:0.82rem; }
-  th { background:#667eea; color:white; padding:7px 10px; text-align:left; font-size:0.8rem; }
-  td { padding:5px 10px; border-bottom:1px solid #e0e0e0; }
-  tr:nth-child(even) td { background:#f5f5f5; }
-  .alert { padding:8px 12px; border-radius:5px; margin:8px 0; font-size:0.82rem; }
-  .alert-danger { background:#f8d7da; border-left:4px solid #dc3545; color:#721c24; }
+  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:0.82rem; border:2px solid #333; }
+  th { background:#1a1a2e; color:white; padding:7px 10px; text-align:left; font-size:0.82rem; }
+  td { padding:5px 10px; border-bottom:1px solid #666; border-right:1px solid #ccc; color:#000; }
+  tr:nth-child(even) td { background:#d8d8d8; }
+  td:first-child { font-weight:bold; }
+  .alert { padding:8px 12px; border-radius:5px; margin:8px 0; font-size:0.82rem; border:1px solid #999; }
+  .alert-danger { background:#ffaaaa; border-left:5px solid #b5001f; color:#000; font-weight:bold; }
   ul { margin-left:18px; margin-top:6px; }
-  li { margin:4px 0; font-size:0.85rem; }
+  li { margin:4px 0; font-size:0.85rem; color:#000; }
+  p { color:#000; font-size:0.85rem; margin:4px 0; }
   @media print {
-    body { padding:10px; font-size:11px; }
+    body { padding:10px; font-size:11px; color:#000 !important; }
     .card { margin:8px 0; padding:10px 14px; }
     .no-print { display:none; }
   }
@@ -3854,10 +3937,10 @@ mL        5 mL        1000 mg       0.5 g
 <body>
   <div style="text-align:center;margin-bottom:16px;">
     <h2>📋 NUR 119 Quick Reference — All Units</h2>
-    <p style="color:#666;font-size:0.9rem;">Dosage Calculations Complete Formula Sheet</p>
-    <button class="no-print" onclick="window.print();window.close();" style="margin-top:10px;background:linear-gradient(135deg,#f093fb,#f5576c);color:white;border:none;padding:10px 24px;border-radius:20px;font-size:0.95rem;font-weight:700;cursor:pointer;">🖨️ Print Now</button>
+    <p style="color:#333;font-size:0.9rem;font-weight:600;">Dosage Calculations Complete Formula Sheet</p>
+    <button class="no-print" onclick="window.print();window.close();" style="margin-top:10px;background:#b5001f;color:white;border:none;padding:10px 24px;border-radius:20px;font-size:0.95rem;font-weight:700;cursor:pointer;">🖨️ Print Now</button>
   </div>
-  ${bodyHTML}
+  \${bodyHTML}
 </body>
 </html>`);
             printWindow.document.close();
