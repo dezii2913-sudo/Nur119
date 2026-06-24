@@ -3896,55 +3896,139 @@ mL        5 mL        1000 mg       0.5 g
         
         // ====== PRINT QUICK REFERENCE ======
         function printQuickRef() {
-            // Collect all card HTML from the Quick Reference section
-            const qrSection = document.querySelector('.section[data-sec="17"]');
-            const cards = qrSection.querySelectorAll('.card, h2');
-            
-            let bodyHTML = '';
-            cards.forEach(el => { bodyHTML += el.outerHTML; });
+            var pw = window.open('', '_blank');
+            if (!pw) { alert('Please allow popups for this page, then try again.'); return; }
 
-            const printWindow = window.open('', '_blank', 'width=900,height=700');
-            printWindow.document.write(`<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>NUR 119 Quick Reference — All Units</title>
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:Arial,sans-serif; background:white; padding:20px; color:#000; font-size:12px; line-height:1.5; }
-  h2 { color:#b5001f; font-size:1.5rem; margin-bottom:14px; text-align:center; }
-  h3 { color:#000; font-size:0.95rem; margin-bottom:8px; font-weight:bold; text-decoration:underline; }
-  .card { background:#e8e8e8; border:2px solid #999; border-left:5px solid #b5001f; padding:14px 18px; margin:12px 0; border-radius:6px; page-break-inside:avoid; }
-  .formula-box { background:#1a1a2e; color:white; padding:12px 16px; border-radius:6px; font-family:'Courier New',monospace; font-size:0.82rem; margin:8px 0; line-height:1.7; border:2px solid #000; }
-  .formula-box strong { color:#7ecfff; }
-  table { width:100%; border-collapse:collapse; margin:8px 0; font-size:0.82rem; border:2px solid #333; }
-  th { background:#1a1a2e; color:white; padding:7px 10px; text-align:left; font-size:0.82rem; }
-  td { padding:5px 10px; border-bottom:1px solid #666; border-right:1px solid #ccc; color:#000; }
-  tr:nth-child(even) td { background:#d8d8d8; }
-  td:first-child { font-weight:bold; }
-  .alert { padding:8px 12px; border-radius:5px; margin:8px 0; font-size:0.82rem; border:1px solid #999; }
-  .alert-danger { background:#ffaaaa; border-left:5px solid #b5001f; color:#000; font-weight:bold; }
-  ul { margin-left:18px; margin-top:6px; }
-  li { margin:4px 0; font-size:0.85rem; color:#000; }
-  p { color:#000; font-size:0.85rem; margin:4px 0; }
-  @media print {
-    body { padding:10px; font-size:11px; color:#000 !important; }
-    .card { margin:8px 0; padding:10px 14px; }
-    .no-print { display:none; }
-  }
-</style>
-</head>
-<body>
-  <div style="text-align:center;margin-bottom:16px;">
-    <h2>📋 NUR 119 Quick Reference — All Units</h2>
-    <p style="color:#333;font-size:0.9rem;font-weight:600;">Dosage Calculations Complete Formula Sheet</p>
-    <button class="no-print" onclick="window.print();window.close();" style="margin-top:10px;background:#b5001f;color:white;border:none;padding:10px 24px;border-radius:20px;font-size:0.95rem;font-weight:700;cursor:pointer;">🖨️ Print Now</button>
-  </div>
-  \${bodyHTML}
-</body>
-</html>`);
-            printWindow.document.close();
-            printWindow.focus();
+            var css = [
+                '* { margin:0; padding:0; box-sizing:border-box; }',
+                'body { font-family:Arial,sans-serif; background:white; padding:20px; color:#000; font-size:12px; line-height:1.5; }',
+                'h1 { color:#b5001f; font-size:1.4rem; text-align:center; margin-bottom:4px; }',
+                '.subtitle { text-align:center; color:#333; margin-bottom:16px; font-size:0.88rem; font-weight:600; }',
+                '.card { background:#e0e0e0; border:2px solid #999; border-left:5px solid #b5001f; padding:12px 16px; margin:12px 0; border-radius:6px; page-break-inside:avoid; }',
+                '.card h3 { color:#000; font-size:0.95rem; font-weight:bold; text-decoration:underline; margin-bottom:8px; }',
+                '.fbox { background:#1a1a2e; color:#fff; border:2px solid #000; border-radius:5px; font-family:monospace; font-size:0.8rem; padding:10px 14px; margin:8px 0; line-height:1.7; }',
+                '.fbox b { color:#7ecfff; }',
+                'table { width:100%; border-collapse:collapse; margin:8px 0; border:2px solid #333; font-size:0.82rem; }',
+                'th { background:#1a1a2e; color:#fff; padding:6px 10px; text-align:left; }',
+                'td { padding:5px 10px; border-bottom:1px solid #777; color:#000; }',
+                'tr:nth-child(even) td { background:#cecece; }',
+                'td:first-child { font-weight:bold; }',
+                'ul { margin-left:18px; margin-top:6px; }',
+                'li { margin:4px 0; color:#000; font-size:0.82rem; }',
+                '.warn { background:#f5a0a0; border-left:5px solid #8b0000; padding:8px 12px; border-radius:4px; margin:8px 0; font-weight:bold; color:#000; border:1px solid #8b0000; }',
+                '.pbtn { display:block; margin:0 auto 16px; padding:9px 26px; background:#b5001f; color:white; border:none; border-radius:20px; font-size:0.95rem; font-weight:bold; cursor:pointer; }',
+                '@media print { .pbtn { display:none !important; } }'
+            ].join('\n');
+
+            var body = [
+                '<button class="pbtn" onclick="window.print()">🖨️ Print Now</button>',
+                '<h1>📋 NUR 119 Quick Reference — All Units</h1>',
+                '<p class="subtitle">Dosage Calculations Complete Formula Sheet</p>',
+
+                // CONVERSIONS
+                '<div class="card"><h3>📏 Essential Conversions</h3>',
+                '<table><tr><th>From</th><th>To</th><th>Conversion</th></tr>',
+                '<tr><td colspan="3"><b>— Household to Metric —</b></td></tr>',
+                '<tr><td>1 tsp</td><td>mL</td><td>5 mL</td></tr>',
+                '<tr><td>1 tbsp</td><td>mL</td><td>15 mL</td></tr>',
+                '<tr><td>1 oz (fluid)</td><td>mL</td><td>30 mL</td></tr>',
+                '<tr><td>1 cup</td><td>mL</td><td>240 mL</td></tr>',
+                '<tr><td colspan="3"><b>— Weight —</b></td></tr>',
+                '<tr><td>1 lb</td><td>oz</td><td>16 oz</td></tr>',
+                '<tr><td>1 kg</td><td>g</td><td>1000 g</td></tr>',
+                '<tr><td>1 g</td><td>mg</td><td>1000 mg</td></tr>',
+                '<tr><td>1 mg</td><td>mcg</td><td>1000 mcg</td></tr>',
+                '<tr><td>1 kg</td><td>lbs</td><td>2.2 lbs</td></tr>',
+                '<tr><td colspan="3"><b>— Volume / Time —</b></td></tr>',
+                '<tr><td>1 L</td><td>mL</td><td>1000 mL</td></tr>',
+                '<tr><td>1 hour</td><td>min</td><td>60 min</td></tr>',
+                '<tr><td>1 day</td><td>hours</td><td>24 hr</td></tr>',
+                '<tr><td colspan="3"><b>— Time Shortcuts —</b></td></tr>',
+                '<tr><td>15 min</td><td>hr</td><td>0.25 hr</td></tr>',
+                '<tr><td>30 min</td><td>hr</td><td>0.5 hr</td></tr>',
+                '<tr><td>45 min</td><td>hr</td><td>0.75 hr</td></tr>',
+                '<tr><td>90 min</td><td>hr</td><td>1.5 hr</td></tr>',
+                '</table></div>',
+
+                // IV
+                '<div class="card"><h3>💧 IV Calculations</h3>',
+                '<div class="fbox"><b>Gravity (gtt/min):</b> (Volume × Drop Factor) ÷ Time(min)<br><b>Pump (mL/hr):</b> Volume(mL) ÷ Time(hr)<br><b>Infusion time (hr):</b> Volume ÷ Rate(mL/hr)<br><b>Microdrip shortcut:</b> Drop factor 60 → gtt/min = mL/hr<br><b>Drop factors:</b> Macro = 10, 15, 20 gtt/mL | Micro = 60 gtt/mL</div></div>',
+
+                // TUBE FEEDING
+                '<div class="card"><h3>🍽️ Tube Feeding (Unit 2)</h3>',
+                '<div class="fbox"><b>Rate:</b> Total volume (mL) ÷ Time (hours)<br><b>kcal/day:</b> mL/day × kcal/mL<br><b>Volume needed:</b> kcal needed ÷ kcal/mL<br><b>Bolus per feeding:</b> Total daily volume ÷ # of feedings<br><b>Total intake:</b> Formula volume + Flush volume<br><b>From kcal goal:</b> Step 1: mL/day = kcal ÷ kcal/mL → Step 2: rate = mL/day ÷ hrs running</div></div>',
+
+                // HEPARIN
+                '<div class="card"><h3>💉 Heparin (Unit 3)</h3>',
+                '<div class="fbox"><b>SubQ bolus:</b> (Ordered units × Volume) ÷ Available units<br><b>Weight-based bolus:</b> units/kg × kg = total → (units × 1 mL) ÷ concentration<br><b>Drip:</b> (units/hr × Total mL) ÷ Total units = mL/hr<br><b>Reverse:</b> (mL/hr × Total units) ÷ Total mL = units/hr<br><b>Protocol:</b> Bolus 70 u/kg | Drip 17 u/kg/hr | Concentration 100 u/mL<br><b>Therapeutic aPTT: 46–70 sec</b> | Check aPTT 6 hrs after any change</div>',
+                '<table><tr><th>aPTT</th><th>Action</th></tr>',
+                '<tr><td>&lt; 35 sec</td><td>Bolus 70 u/kg, increase drip 4 u/kg/hr</td></tr>',
+                '<tr><td>35–45 sec</td><td>Bolus 40 u/kg, increase drip 2 u/kg/hr</td></tr>',
+                '<tr><td>46–70 sec</td><td>✅ THERAPEUTIC — No change</td></tr>',
+                '<tr><td>71–90 sec</td><td>Decrease drip 2 u/kg/hr</td></tr>',
+                '<tr><td>&gt; 90 sec</td><td>Hold 1 hr, decrease drip 3 u/kg/hr on restart</td></tr>',
+                '</table></div>',
+
+                // INSULIN
+                '<div class="card"><h3>🩸 Insulin (Unit 3)</h3>',
+                '<div class="fbox"><b>IV drip:</b> (units/hr × Total mL) ÷ Total units = mL/hr<br><b>1:1 shortcut:</b> 100 units/100 mL → units/hr = mL/hr<br><b>Sliding scale:</b> Match BG to protocol range → give specified units<br><b>Rounding:</b> Whole units ONLY | IV insulin = Regular insulin ONLY<br><b>Unit conversion:</b> mU ÷ 1000 = units | units × 1000 = mU</div></div>',
+
+                // RECONSTITUTION
+                '<div class="card"><h3>🧪 Reconstitution (Unit 3)</h3>',
+                '<div class="fbox"><b>D/H × Q:</b> (Ordered ÷ Available concentration) × Volume<br><b>Always use FINAL concentration</b> after mixing — not the powder amount<br><b>Final volume</b> = diluent added + powder displacement<br><b>Stability:</b> Room temp 4–24 hr | Refrigerated 7–14 days | Multi-dose vial 28 days</div></div>',
+
+                // PEDIATRIC
+                '<div class="card"><h3>👶 Pediatric Weight-Based Dosing (Unit 4)</h3>',
+                '<div class="fbox"><b>Convert:</b> lbs ÷ 2.2 = kg | grams ÷ 1000 = kg<br><b>kg → lbs &amp; oz:</b> kg × 2.2 = total lbs → whole # = lbs, decimal × 16 = oz<br><b>Actual mg/day:</b> dose × doses/day<br><b>Low safe:</b> low mg/kg/day × kg | <b>High safe:</b> high mg/kg/day × kg<br><b>S&amp;T check:</b> Actual must be ≥ low AND ≤ high<br><b>mg/kg/day received:</b> Total mg/day ÷ kg<br><b>Volume to give:</b> (Ordered mg ÷ Available mg) × Volume</div>',
+                '<table><tr><th>Frequency</th><th>Doses/Day</th></tr>',
+                '<tr><td>q4h</td><td>6</td></tr><tr><td>q6h</td><td>4</td></tr>',
+                '<tr><td>q8h / TID</td><td>3</td></tr><tr><td>q12h / BID</td><td>2</td></tr>',
+                '<tr><td>Daily</td><td>1</td></tr></table></div>',
+
+                // FLUID MAINTENANCE
+                '<div class="card"><h3>💧 Pediatric Fluid Maintenance — Holliday-Segar (Unit 4)</h3>',
+                '<div class="warn">⚠️ NOT for neonatal use!</div>',
+                '<table><tr><th>Weight</th><th>24-Hour Formula</th></tr>',
+                '<tr><td>0–10 kg</td><td>100 mL/kg</td></tr>',
+                '<tr><td>&gt;10–20 kg</td><td>1000 mL + 50 mL × (kg − 10)</td></tr>',
+                '<tr><td>&gt;20 kg</td><td>1500 mL + 20 mL × (kg − 20)</td></tr>',
+                '</table>',
+                '<div class="fbox"><b>mL/hr:</b> Total 24-hr mL ÷ 24 (round to whole number)</div></div>',
+
+                // QUICK METHODS
+                '<div class="card"><h3>🔄 Quick Calculation Methods</h3>',
+                '<div class="fbox"><b>D/H × Q:</b> (Desired ÷ Have) × Quantity — works for ANY oral/parenteral/recon<br><b>1:1 ratio:</b> Concentration = 1 unit/mL → units/hr = mL/hr<br><b>Critical care → mL/hr:</b> multiply by weight (kg/1)<br><b>Critical care → mcg/kg/min:</b> divide by weight (1/kg)</div></div>',
+
+                // ROUNDING
+                '<div class="card"><h3>📐 Rounding Rules</h3>',
+                '<table><tr><th>What</th><th>Round to</th></tr>',
+                '<tr><td>Tablets (scored)</td><td>Nearest 0.5 tab</td></tr>',
+                '<tr><td>Oral liquids</td><td>Nearest 0.1 mL</td></tr>',
+                '<tr><td>Injections</td><td>Nearest 0.1 mL</td></tr>',
+                '<tr><td>Gravity IV (gtt/min)</td><td>Whole number</td></tr>',
+                '<tr><td>IV pump (mL/hr)</td><td>Nearest 0.1 (or whole)</td></tr>',
+                '<tr><td>Insulin</td><td>Whole units only</td></tr>',
+                '<tr><td>Heparin bolus</td><td>Nearest 0.1 mL</td></tr>',
+                '<tr><td>Tube feeding / kcal</td><td>Whole number</td></tr>',
+                '<tr><td>Peds fluid maintenance</td><td>Whole number (mL/hr)</td></tr>',
+                '<tr><td>Peds weight-based doses</td><td>Nearest tenth</td></tr>',
+                '</table></div>',
+
+                // SAFETY
+                '<div class="card"><h3>⚠️ Safety Rules</h3><ul>',
+                '<li>1 unit = 1,000 milliunits | Never write "u" for units</li>',
+                '<li>IM max: 3 mL/site | SubQ max: 1.5 mL</li>',
+                '<li>Ice = ½ volume for I&amp;O | Ice cream/popsicles = FULL volume</li>',
+                '<li>Normal urine output: 30–50 mL/hr minimum</li>',
+                '<li>Heparin &amp; insulin: Two RN verification required</li>',
+                '<li>Pediatric: ALWAYS verify S&amp;T before giving any dose</li>',
+                '<li>Temp F→C: (F − 32) ÷ 1.8 | Temp C→F: (C × 1.8) + 32</li>',
+                '</ul></div>'
+            ].join('\n');
+
+            pw.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>NUR 119 Quick Reference</title><style>' + css + '</style></head><body>' + body + '</body></html>');
+            pw.document.close();
+            pw.focus();
         }
 
         // ====== UNIT 4 PRACTICE FUNCTIONS ======
